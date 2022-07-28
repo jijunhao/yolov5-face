@@ -96,23 +96,24 @@ python -m val2yolo
 
 **Set the  original data  like this in the same level file directory with train. Details are shown in train2yolo.py and val2yolo.py** 
 
-widerface
-├── test
-│   ├── images
-│   │   ├── 12--Group
-│   │   └── 20--Family_Group
 
-│   └── label.txt
-├── train
-│   ├── images
-│   │   ├── 12--Group
-│   │   └── 20--Family_Group
-│   └── label.txt
-└── val
-    ├── images
-    │   ├── 12--Group
-    │   └── 20--Family_Group
-    └── label.txt
+widerface  
+├── test  
+│   ├── images  
+│   │   ├── 12--Group  
+│   │   └── 20--Family_Group  
+  
+│   └── label.txt  
+├── train  
+│   ├── images  
+│   │   ├── 12--Group  
+│   │   └── 20--Family_Group  
+│   └── label.txt  
+└── val  
+    ├── images  
+    │   ├── 12--Group  
+    │   └── 20--Family_Group  
+    └── label.txt  
 
 Then you will get widerfaceyolo to train.
 
