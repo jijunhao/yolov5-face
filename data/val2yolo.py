@@ -51,35 +51,13 @@ def wider2face(root, phase='val', ignore_small=0):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) == 1:
-        print('Missing path to WIDERFACE folder.')
-        print('Run command: python3 val2yolo.py /path/to/original/widerface [/path/to/save/widerface/val]')
-        exit(1)
-    elif len(sys.argv) > 3:
-        print('Too many arguments were provided.')
-        print('Run command: python3 val2yolo.py /path/to/original/widerface [/path/to/save/widerface/val]')
-        exit(1)
-
-    root_path = sys.argv[1]
-    if not os.path.isfile(os.path.join(root_path, 'val', 'label.txt')):
-        print('Missing label.txt file.')
-        exit(1)
-
-    if len(sys.argv) == 2:
-        if not os.path.isdir('widerface'):
-            os.mkdir('widerface')
-        if not os.path.isdir('widerface/val'):
-            os.mkdir('widerface/val')
-
-        save_path = 'widerface/val'
-    else:
-        save_path = sys.argv[2]
-
+    root_path = r'../widerface'
+    save_path = r'../widerfaceyolo/val'
     datas = wider2face(root_path, phase='val')
     for idx, data in enumerate(datas.keys()):
         pict_name = os.path.basename(data)
-        out_img = f'{save_path}/{idx}.jpg'
-        out_txt = f'{save_path}/{idx}.txt'
+        out_img = f'{save_path}/images/{idx}.jpg'
+        out_txt = f'{save_path}/labels/{idx}.txt'
         shutil.copyfile(data, out_img)
         labels = datas[data]
         f = open(out_txt, 'w')
