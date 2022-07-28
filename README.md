@@ -84,21 +84,48 @@ Single Scale Inference on VGA resolution（max side is equal to 640 and scale).
 
 ## Data preparation
 
-1. Download WIDERFace datasets.
+1. Download WIDERFace datasets. Choose any kinds.
 2. Download annotation files from [google drive](https://drive.google.com/file/d/1tU_IjyOwGQfGNUvZGwWWM4SwxKp2PUQ8/view?usp=sharing).
 
 ```shell
-cd data
-python3 train2yolo.py /path/to/original/widerface/train [/path/to/save/widerface/train]
-python3 val2yolo.py  /path/to/original/widerface [/path/to/save/widerface/val]
+python -m train2yolo
+python -m val2yolo
 ```
+
+
+
+**Set the  original data  like this in the same level file directory with train. Details are shown in train2yolo.py and val2yolo.py** 
+
+widerface
+├── test
+│   ├── images
+│   │   ├── 12--Group
+│   │   └── 20--Family_Group
+
+│   └── label.txt
+├── train
+│   ├── images
+│   │   ├── 12--Group
+│   │   └── 20--Family_Group
+│   └── label.txt
+└── val
+    ├── images
+    │   ├── 12--Group
+    │   └── 20--Family_Group
+    └── label.txt
+
+Then you will get widerfaceyolo to train.
 
 
 
 ## Training
 
 ```shell
-CUDA_VISIBLE_DEVICES="0,1,2,3" python3 train.py --data data/widerface.yaml --cfg models/yolov5s.yaml --weights 'pretrained models'
+#train code
+python -m  train --data data/widerFace.yaml --weights yolov5s-face --batch-size 8 --img 640 --epochs 30
+
+#test code
+python -m detect --image ./data/images/test.png --weights ./runs/train/exp/weights/best.pt
 ```
 
 
