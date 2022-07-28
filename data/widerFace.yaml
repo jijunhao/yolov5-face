@@ -1,0 +1,7 @@
+# 数据集源路径root、训练集、验证集、测试集地址
+train: ./widerfaceyolo/train/              # train images (relative to 'path') 118287 images
+val: ./widerfaceyolo/val/                 # val images (relative to 'path') 5000 images
+
+# Classes
+nc: 1  # number of classes
+names: ['face']  # class names
