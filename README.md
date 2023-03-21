@@ -1,5 +1,20 @@
 ## What's New
 
+**2022.10** [yolov7-face](https://github.com/derronqi/yolov7-face) (🔥🔥🔥↑)
+
+
+**2022.8**: yolov7
+
+| Method           |  Test Size | Easy  | Medium | Hard  | FLOPs (B) @640 | 
+| -----------------| ---------- | ----- | ------ | ----- | -------------- | 
+| yolov7-lite-t    | 640        | 88.7  | 85.2   | 71.5  |  0.8           |
+| yolov7-lite-s    | 640        | 92.7  | 89.9   | 78.5  |  3.0           | 
+| yolov7-tiny      | 640        | 94.7  | 92.6   | 82.1  |  13.2          | 
+| yolov7s          | 640        | 94.8  | 93.1   | 85.2  |  16.8          | 
+| yolov7           | 640        | 96.9  | 95.5   | 88.0  |  103.4         | 
+| yolov7+TTA       | 640        | 97.2  | 95.8   | 87.7  |  103.4         | 
+
+
 **2021.12**: Yolov5-face to TensorRT. 
 
 |   Backbone   | Pytorch(ms) | TensorRT_FP16(ms) |
@@ -144,12 +159,22 @@ python3 evaluation.py
 
 ![](data/images/result.jpg)
 
+#### Landmark Visulization 
+
+![](data/images/landmark.png)
+First row: RetinaFace, 2nd row: YOLOv5m-Face 
+**YOLO5Face was used in the 3rd place standard face recogntion track of the [ICCV2021 Masked Face Recognition Challenge](https://www.face-benchmark.org/challenge.html).** 
+
+
+#### AXera demo
+
+https://github.com/AXERA-TECH/ax-samples/blob/main/examples/ax_yolov5s_face_steps.cc
 
 #### Android demo
 
 https://github.com/FeiGeChuanShu/ncnn_Android_face/tree/main/ncnn-android-yolov5_face
 
-#### opencv dnn demo
+#### OpenCV DNN demo
 
 https://github.com/hpc203/yolov5-face-landmarks-opencv-v2
 
@@ -185,11 +210,4 @@ https://github.com/deepinsight/insightface
       booktitle = {ArXiv preprint ArXiv:2105.12931},
       year = {2021}
       }
-
-#### Main Contributors
-https://github.com/derronqi  
-
-https://github.com/changhy666 
-
-https://github.com/bobo0810 
 
